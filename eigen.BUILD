@@ -1,5 +1,5 @@
 cc_library(
-    name = "eigen",
+    name = "eigen_headers",
     hdrs = glob(["**"]),
     includes = ["."],
     visibility = ["//visibility:public"],

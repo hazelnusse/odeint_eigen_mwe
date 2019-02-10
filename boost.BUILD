@@ -1,5 +1,5 @@
 cc_library(
-    name = "boost",
+    name = "boost_headers",
     hdrs = glob([
         "boost/**/*.hpp",
         "boost/**/*.h",

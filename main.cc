@@ -1,14 +1,12 @@
 #include <boost/numeric/odeint.hpp>
+#if defined(USE_EIGEN_AS_STATE_TYPE) && (USE_EIGEN_AS_STATE_TYPE == 1)
 #include <boost/numeric/odeint/external/eigen/eigen.hpp>
 #include <Eigen/Core>
-
-#include <array>
-
-// Doesn't work:
 using state_type = Eigen::Matrix<double, 1, 1>;
-
-// Works:
-//using state_type = std::array<double, 1>;
+#else
+#include <array>
+using state_type = std::array<double, 1>;
+#endif
 
 void f(const state_type &x, state_type &dxdt, double) {
   dxdt[0] = 0;
