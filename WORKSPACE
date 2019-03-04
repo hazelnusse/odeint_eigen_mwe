@@ -10,13 +10,15 @@ http_archive(
     urls = ["http://bitbucket.org/eigen/eigen/get/3.3.7.tar.bz2"],
 )
 
-# Eigen github mirror
-#new_git_repository(
-#    name = "eigen_github",
-#    build_file = "//:eigen.BUILD",
-#    remote = "https://github.com/eigenteam/eigen-git-mirror.git",
-#    commit = "60f4f796197fb9c3b9e5001a893da6c0eca6b089",
-#)
+# odeint-v2
+http_archive(
+    name = "odeint-v2",
+    build_file = "//:odeint-v2.BUILD",
+    sha256 = "64714fb09fead7244a7d4c41c54b8c875d3abf4de58a6c458bd837339d1e77ca",
+    urls = ["https://github.com/headmyshoulder/odeint-v2/archive/fix_eigen3.3.zip"],
+    strip_prefix = "odeint-v2-fix_eigen3.3",
+)
+
 
 # Boost release
 http_archive(
@@ -26,6 +28,3 @@ http_archive(
     urls = ["https://dl.bintray.com/boostorg/release/1.69.0/source/boost_1_69_0.tar.bz2"],
     strip_prefix = "boost_1_69_0",
 )
-
-# TODO: Boost github mirror; likely more complicated than just cloning boost
-# odeint

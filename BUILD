@@ -4,10 +4,8 @@ cc_binary(
         "main.cc",
     ],
     deps = [
-        "@boost//:boost_headers",
-#        "@boost_github//:eigen_headers",
         "@eigen//:eigen_headers",
-#        "@eigen_github//:eigen_headers",
+        "@odeint-v2//:odeint-v2-headers",
     ],
     defines = [
         "USE_EIGEN_AS_STATE_TYPE=1"
